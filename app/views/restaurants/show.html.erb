@@ -1,0 +1,28 @@
+
+
+
+<div class="card" style="width: 32rem;">
+  <img src="https://source.unsplash.com/building" class="card-img-top" alt="restaurant photo">
+  <div class="card-body">
+    <h1 class="card-text"> <%= @restaurant.name %></h1>
+
+    <h3 class="card-text">Category: <%= @restaurant.category  %></h3>
+
+    <p class="card-text">address: <%= @restaurant.address %></p>
+
+    <p class="card-text">phone number: <%= @restaurant.phone_number %></p>
+  </div>
+
+  <% @restaurant.reviews.each do |review|%>
+    <div class="card" style="width: 32rem;">
+    <div class="card-body">
+      <h5 class="card-title">Review</h5>
+      <h6 class="card-subtitle mb-2 text-muted">User wrote about <%= @restaurant.name %>:</h6>
+      <p class="card-text"><%= review.rating %></p>
+      <p class="card-text"><%= review.content %></p>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "Back to list", restaurants_path, class: "btn btn-outline-dark"%>
+<%= link_to "Add a review", new_restaurant_review_path(@restaurant), class: "btn btn-outline-dark"%>

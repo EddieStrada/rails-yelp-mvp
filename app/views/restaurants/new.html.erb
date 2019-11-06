@@ -1,0 +1,14 @@
+<h1>Add a Restaurant Here</h1>
+<div class="container">
+  <div class="d-flex justify-content-start">
+    <%= simple_form_for @restaurant do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :phone_number %>
+      <%= f.input :category %>
+      <%= f.submit "add this restaurant", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to "Back to list", restaurants_path, class: "btn btn-outline-dark"%>
